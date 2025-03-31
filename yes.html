@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Marry Me? 💍</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffebee;
+            text-align: center;
+            padding: 50px;
+            color: #d81b60;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        .emoji {
+            font-size: 2em;
+            margin: 0 5px;
+        }
+        .buttons {
+            margin-top: 30px;
+        }
+        button {
+            padding: 12px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 0 10px;
+            transition: all 0.3s;
+        }
+        #yes {
+            background-color: #4caf50;
+            color: white;
+        }
+        #no {
+            background-color: #f44336;
+            color: white;
+            position: relative;
+        }
+        #yes:hover {
+            background-color: #388e3c;
+            transform: scale(1.1);
+        }
+        .hidden-message {
+            display: none;
+            margin-top: 30px;
+            font-size: 1.5em;
+            color: #d81b60;
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .ring {
+            width: 150px;
+            margin: 20px auto;
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="ring">💍</div>
+        <h1>My Dearest Love <span class="emoji">❤️</span></h1>
+        
+        <p>From the moment I met you, my life changed forever <span class="emoji">✨</span></p>
+        <p>Every day with you is a blessing <span class="emoji">🌹</span></p>
+        <p>Your smile lights up my world <span class="emoji">☀️</span></p>
+        <p>Your love fills my heart with joy <span class="emoji">💖</span></p>
+        <p>I can't imagine my life without you <span class="emoji">😊</span></p>
+        
+        <p>Will you make me the happiest person alive and be my wife? <span class="emoji">🥺</span></p>
+        
+        <div class="buttons">
+            <button id="yes">Yes! <span class="emoji">💕</span></button>
+            <button id="no">No <span class="emoji">😢</span></button>
+        </div>
+        
+        <div id="response" class="hidden-message">
+            I love you so much! <span class="emoji">💘</span> Can't wait to spend forever with you! <span class="emoji">👰‍♀️🤵‍♂️</span>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('yes').addEventListener('click', function() {
+            document.getElementById('response').style.display = 'block';
+            document.getElementById('no').style.display = 'none';
+            this.innerHTML = 'YES! YES! YES! <span class="emoji">💍💘🎉</span>';
+            this.style.transform = 'scale(1.2)';
+            this.style.backgroundColor = '#d81b60';
+        });
+        
+        document.getElementById('no').addEventListener('mouseover', function() {
+            // Make the "No" button run away
+            this.style.position = 'absolute';
+            this.style.left = Math.random() * 300 + 'px';
+            this.style.top = Math.random() * 300 + 'px';
+        });
+    </script>
+</body>
+</html>
